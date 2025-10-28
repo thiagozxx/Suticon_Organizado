@@ -1,0 +1,19 @@
+RewriteEngine On
+RewriteBase /
+
+# Redireciona a raiz (/) para /pages/index
+RewriteRule ^$ pages/index [R=301,L]
+
+# Remove .html dos URLs
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ pages/$1.html [L]
+
+# Redireciona URLs com .html para URLs sem .html
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)\.html$ /$1 [R=301,L]
+
+<Files "db_config.php">
+    Order allow,deny
+    Deny from all
+</Files>

@@ -1,0 +1,124 @@
+.logo-frame {
+    @apply relative w-32 h-32 lg:w-40 lg:h-40 bg-white rounded-2xl shadow-lg border border-gray-100 flex items-center justify-center p-2 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:border-cyan-200 hover:bg-gradient-to-br hover:from-cyan-50 hover:to-blue-50;
+}
+
+.logo-img {
+    @apply w-full h-full object-cover object-center transition-all duration-300 grayscale hover:grayscale-0;
+    width: auto;
+    height: 128px;
+}
+
+.logo-img[onerror] {
+    background-color: #f0f0f0;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    content: "Imagem não carregada";
+}
+
+.client-logo {
+    @apply block;
+}
+
+.client-logo.group:hover .logo-frame {
+    @apply scale-105 shadow-cyan-500/25 ring-2 ring-cyan-500/30;
+}
+
+.carousel-container {
+    @apply h-40 lg:h-44 relative overflow-hidden;
+}
+
+.carousel-track {
+    display: flex;
+    width: max-content;
+    animation: scroll 30s linear infinite;
+    will-change: transform;
+}
+
+.carousel-track.paused {
+    animation-play-state: paused;
+}
+
+.carousel-set {
+    display: flex;
+    flex-shrink: 0;
+    gap: 3rem; /* Matches gap-12 */
+}
+
+@media (min-width: 1024px) {
+    .carousel-set {
+        gap: 4rem; /* Matches lg:gap-16 */
+    }
+}
+
+/* Smooth infinite scroll */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Fade effects */
+.carousel-container::before,
+.carousel-container::after {
+    content: '';
+    @apply absolute top-0 h-full w-32 z-10 pointer-events-none;
+}
+
+.carousel-container::before {
+    @apply left-0 bg-gradient-to-r from-white to-transparent;
+}
+
+.carousel-container::after {
+    @apply right-0 bg-gradient-to-l from-white to-transparent;
+}
+
+/* Navigation buttons */
+.carousel-prev,
+.carousel-next {
+    @apply w-10 h-10 bg-white/80 backdrop-blur-md rounded-full shadow-lg hover:bg-white transition-all duration-300 border border-gray-200 flex items-center justify-center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .logo-frame {
+        @apply w-24 h-24 p-1;
+    }
+
+    .logo-img {
+        width: 88px; /* w-24 (96px) - 2 * p-1 (4px) = 88px */
+        height: 88px; /* h-24 (96px) - 2 * p-1 (4px) = 88px */
+    }
+
+    .carousel-container {
+        @apply h-32;
+    }
+
+    .carousel-prev,
+    .carousel-next {
+        @apply w-8 h-8;
+    }
+
+    .carousel-prev i,
+    .carousel-next i {
+        @apply text-sm;
+    }
+
+    .carousel-set {
+        gap: 2rem; /* Matches gap-8 for mobile */
+    }
+}
+
+/* Ensure animation compatibility */
+.carousel-track {
+    -webkit-animation: scroll 30s linear infinite;
+    -moz-animation: scroll 30s linear infinite;
+    animation: scroll 30s linear infinite;
+}
