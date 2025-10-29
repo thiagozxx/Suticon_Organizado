@@ -32,15 +32,3 @@ function updateYear() {
         console.warn("⚠️ Elemento com ID 'year' não encontrado no footer.");
     }
 }
-
-$(document).ready(function() {
-    let timeout;
-    $('.has-submenu').on('mouseenter', function() {
-        clearTimeout(timeout);
-        $(this).find('ul').addClass('block').removeClass('hidden').css('opacity', 1);
-    }).on('mouseleave', function() {
-        timeout = setTimeout(() => {
-            $(this).find('ul').addClass('hidden').removeClass('block').css('opacity', 0);
-        }, 300);  // Delay de 300ms antes de fechar
-    });
-});
