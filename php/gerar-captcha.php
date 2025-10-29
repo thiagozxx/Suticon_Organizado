@@ -12,6 +12,5 @@ $_SESSION['captcha_result'] = $num1 + $num2;
 echo json_encode([
     'num1' => $num1,
     'num2' => $num2,
-    'resultado' => $_SESSION['captcha_result']
 ]);
 ?>

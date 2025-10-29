@@ -32,28 +32,231 @@
 
 <body class="bg-gray-50 text-gray-900 antialiased">
 
-    <div id="header"></div>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5H8HJGCW" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
 
-    <!-- Hero Section -->
-    <section class="relative h-screen flex items-center justify-center overflow-hidden">
-        <!-- Imagem de fundo -->
-        <div class="absolute inset-0 bg-cover bg-center"
-            style="background-image: url('/assets/images/about/store-interior.jpg');"></div>
+    <nav
+        class="fixed w-full z-50 top-0 left-0 border-b border-gray-200 shadow-md bg-white md:bg-white/80 md:backdrop-blur-md transition-colors duration-300">
+        <div class="max-w-screen-xl flex items-center justify-between mx-auto p-4">
+            <a href="/index.html" class="flex items-center space-x-3 rtl:space-x-reverse" aria-label="Voltar para Home">
+                <img src="/assets/images/logo_suticon.png" class="h-12" alt="Logo Suticon" loading="lazy">
+            </a>
 
-        <!-- Gradiente escuro -->
-        <div class="absolute inset-0 bg-gradient-to-r from-black/90 to-black/60"></div>
+            <button id="open-menu" class="md:hidden focus:outline-none" aria-label="Abrir menu" aria-expanded="false">
+                <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+
+            <!-- Menu Desktop -->
+            <ul class="hidden md:flex space-x-8 text-cyan-900 font-medium">
+                <li><a href="/index.html" class="hover:text-cyan-600 hover:underline transition">Home</a></li>
+                <li><a href="/pages/sobre.html" class="hover:text-cyan-600 hover:underline transition">Sobre</a></li>
+                <li class="relative group has-submenu">
+                    <a href="javascript:void(0);"
+                        class="hover:text-cyan-600 hover:underline flex items-center transition" aria-haspopup="true"
+                        aria-expanded="false">
+                        Serviços
+                        <svg class="w-4 h-4 ml-2 transition-transform transform group-hover:rotate-180"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </a>
+                    <ul
+                        class="absolute hidden group-hover:block bg-white text-gray-900 mt-2 space-y-2 py-2 w-48 rounded-lg shadow-lg border border-gray-200 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                        <li><a href="/pages/helpdesk.html"
+                                class="block px-4 py-2 hover:bg-cyan-50 hover:text-cyan-700 transition">Help Desk</a>
+                        </li>
+                        <li><a href="/pages/antivirus.html"
+                                class="block px-4 py-2 hover:bg-cyan-50 hover:text-cyan-700 transition">Antivírus /
+                                Endpoint</a></li>
+                        <li><a href="/pages/infraestrutura-rede.html"
+                                class="block px-4 py-2 hover:bg-cyan-50 hover:text-cyan-700 transition">Infraestrutura</a>
+                        </li>
+                        <li><a href="/pages/servidor.html"
+                                class="block px-4 py-2 hover:bg-cyan-50 hover:text-cyan-700 transition">Servidor</a>
+                        </li>
+                        <li><a href="/pages/firewall.html"
+                                class="block px-4 py-2 hover:bg-cyan-50 hover:text-cyan-700 transition">Firewall</a>
+                        </li>
+                        <li><a href="/pages/backupemnuvem.html"
+                                class="block px-4 py-2 hover:bg-cyan-50 hover:text-cyan-700 transition">Backup em
+                                Nuvem</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="/pages/projetosespeciais.html" class="hover:text-cyan-600 hover:underline transition"
+                        target="_blank">Projetos Especiais</a></li>
+                <li><a href="/pages/equipe.html" class="hover:text-cyan-600 hover:underline transition">Equipe</a></li>
+                <li><a href="/pages/contato.html" class="hover:text-cyan-600 hover:underline transition">Contato</a>
+                </li>
+                <li class="relative group has-submenu">
+                    <a href="javascript:void(0);" class="flex items-center hover:text-cyan-600 transition"
+                        aria-haspopup="true" aria-expanded="false">
+                        Mais
+                        <svg class="w-4 h-4 ml-2 transition-transform group-hover:rotate-180" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </a>
+                    <ul
+                        class="absolute hidden group-hover:block bg-white rounded-lg shadow-lg border border-gray-200 py-2 mt-2 w-48 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                        <li><a href="https://blog.suticon.com.br/" class="block px-4 py-2 hover:bg-cyan-50"
+                                target="_blank">Blog</a></li>
+                        <li><a href="/loja/index.html" class="block px-4 py-2 hover:bg-cyan-50">Loja</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <a href="https://crm.suticon.com.br/"
+                class="text-white bg-cyan-600 rounded-full px-6 py-2 hover:bg-cyan-700 hidden md:block transition transform hover:scale-105">
+                Área do Cliente
+            </a>
+        </div>
+
+        <!-- Overlay -->
+        <div class="off-canvas-overlay fixed inset-0 bg-black/60 z-40 hidden opacity-0 transition-opacity duration-400">
+        </div>
+
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" aria-hidden="true"
+            class="fixed inset-y-0 right-0 h-full w-80 max-w-[320px] bg-white text-gray-900 font-medium transform translate-x-full transition-transform duration-400 ease-in-out z-50 shadow-[-4px_0_10px_rgba(0,0,0,0.08)] overflow-y-auto pb-8">
+            <button id="close-menu" class="absolute top-4 right-4 focus:outline-none p-2 rounded-full hover:bg-cyan-50"
+                aria-label="Fechar menu">
+                <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+            <ul class="flex flex-col space-y-2 pt-16 p-6 text-gray-900">
+                <li><a href="/index.html"
+                        class="block px-4 py-3 text-lg font-medium hover:bg-cyan-50 hover:text-cyan-700 transition flex items-center gap-2"><i
+                            class="fas fa-home"></i>Home</a></li>
+                <li><a href="/pages/sobre.html"
+                        class="block px-4 py-3 text-lg font-medium hover:bg-cyan-50 hover:text-cyan-700 transition flex items-center gap-2"><i
+                            class="fas fa-info-circle"></i>Sobre</a></li>
+                <li>
+                    <button id="services-toggle"
+                        class="w-full text-left px-4 py-3 text-lg font-medium hover:bg-cyan-50 text-gray-900 flex justify-between items-center"
+                        aria-expanded="false" aria-label="Expandir menu de serviços">
+                        <span class="flex items-center gap-2"><i class="fas fa-tools"></i>Serviços</span>
+                        <svg class="w-4 h-4 text-gray-900 transition-transform" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <ul id="services-menu" class="pl-8 space-y-2 text-gray-900" role="menu"
+                        style="max-height: 0; opacity: 0; overflow: hidden; transition: max-height 0.3s ease, opacity 0.3s ease;">
+                        <li><a href="/pages/helpdesk.html"
+                                class="block px-4 py-2 hover:bg-cyan-50 hover:text-cyan-700 transition flex items-center gap-2"><i
+                                    class="fas fa-headset"></i>Help Desk</a></li>
+                        <li><a href="/pages/antivirus.html"
+                                class="block px-4 py-2 hover:bg-cyan-50 hover:text-cyan-700 transition flex items-center gap-2"><i
+                                    class="fas fa-shield-alt"></i>Antivírus / Endpoint</a></li>
+                        <li><a href="/pages/readequacaoderede.html"
+                                class="block px-4 py-2 hover:bg-cyan-50 hover:text-cyan-700 transition flex items-center gap-2"><i
+                                    class="fas fa-network-wired"></i>Infraestrutura</a></li>
+                        <li><a href="/pages/servidor.html"
+                                class="block px-4 py-2 hover:bg-cyan-50 hover:text-cyan-700 transition flex items-center gap-2"><i
+                                    class="fas fa-server"></i>Servidor</a></li>
+                        <li><a href="/pages/firewall.html"
+                                class="block px-4 py-2 hover:bg-cyan-50 hover:text-cyan-700 transition flex items-center gap-2"><i
+                                    class="fas fa-shield"></i>Firewall</a></li>
+                        <li><a href="/pages/backupemnuvem.html"
+                                class="block px-4 py-2 hover:bg-cyan-50 hover:text-cyan-700 transition flex items-center gap-2"><i
+                                    class="fas fa-cloud-upload-alt"></i>Backup em Nuvem</a></li>
+                    </ul>
+                </li>
+                <li><a href="/pages/projetosespeciais.html"
+                        class="block px-4 py-3 text-lg font-medium hover:bg-cyan-50 hover:text-cyan-700 transition flex items-center gap-2"
+                        target="_blank"><i class="fas fa-project-diagram"></i>Projetos Especiais</a></li>
+                <li><a href="/pages/equipe.html"
+                        class="block px-4 py-3 text-lg font-medium hover:bg-cyan-50 hover:text-cyan-700 transition flex items-center gap-2"><i
+                            class="fas fa-users"></i>Equipe</a></li>
+                <li><a href="/pages/contato.html"
+                        class="block px-4 py-3 text-lg font-medium hover:bg-cyan-50 hover:text-cyan-700 transition flex items-center gap-2"><i
+                            class="fas fa-envelope"></i>Contato</a></li>
+                <li>
+                    <button id="more-toggle"
+                        class="w-full text-left px-4 py-3 text-lg font-medium hover:bg-cyan-50 text-gray-900 flex justify-between items-center"
+                        aria-expanded="false" aria-label="Expandir menu Mais">
+                        <span class="flex items-center gap-2"><i class="fas fa-ellipsis-h"></i>Mais</span>
+                        <svg class="w-4 h-4 text-gray-900 transition-transform" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <ul id="more-menu" class="pl-8 space-y-2 text-gray-900" role="menu"
+                        style="max-height: 0; opacity: 0; overflow: hidden; transition: max-height 0.3s ease, opacity 0.3s ease;">
+                        <li><a href="https://blog.suticon.com.br/"
+                                class="block px-4 py-2 hover:bg-cyan-50 hover:text-cyan-700 transition flex items-center gap-2"
+                                target="_blank"><i class="fas fa-blog"></i>Blog</a></li>
+                        <li><a href="/loja/index.html"
+                                class="block px-4 py-2 hover:bg-cyan-50 hover:text-cyan-700 transition flex items-center gap-2"><i
+                                    class="fas fa-shopping-cart"></i>Loja</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://crm.suticon.com.br/"
+                        class="block px-4 py-3 text-lg font-medium text-white bg-cyan-600 rounded-full hover:bg-cyan-700 transition flex items-center gap-2"><i
+                            class="fas fa-user-circle"></i>Área do Cliente</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="relative min-h-[75vh] flex items-center justify-center overflow-hidden bg-slate-900 mt-20">
+
+        <!-- Vídeo de Fundo -->
+        <video class="absolute inset-0 w-full h-full object-cover brightness-75 saturate-110" autoplay muted loop
+            playsinline aria-hidden="true">
+            <source src="/assets/video/SUTICON SOLUÇÕES EM T.I..mp4" type="video/mp4">
+        </video>
+
+        <!-- Overlay com Gradient Sutil (para legibilidade) -->
+        <div class="absolute inset-0 bg-gradient-to-br from-slate-900/70 via-blue-900/50 to-cyan-900/70"></div>
 
         <!-- Conteúdo -->
         <div class="relative z-10 container px-4 text-center">
             <div class="max-w-3xl mx-auto">
-                <h1 class="text-5xl md:text-6xl font-bold mb-6 text-white drop-shadow-lg animate-fade-in">
-                    Sobre a SUTICON
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 text-white drop-shadow-md animate-fade-in">
+                    Sobre a <span
+                        class="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">SUTICON</span>
                 </h1>
-                <p class="text-xl md:text-2xl text-gray-200 animate-fade-in">
+                <p class="text-xl md:text-2xl text-cyan-100 font-light animate-fade-in animation-delay-200">
                     Sua parceira de confiança em tecnologia e inovação
                 </p>
             </div>
         </div>
+
+        <!-- Scroll Down -->
+        <a href="#missao" class="absolute bottom-8 left-1/2 transform -translate-x-1/2 group z-20">
+            <svg width="36" height="60" viewBox="0 0 36 60" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="drop-shadow-md group-hover:animate-bounce transition-all duration-300">
+
+                <!-- Contorno do balão (arredondado) -->
+                <rect x="2" y="2" width="32" height="56" rx="16" stroke="currentColor" stroke-width="2.5"
+                    class="text-cyan-300 group-hover:text-white transition-colors duration-300" />
+
+                <!-- Setinha que "rola" -->
+                <path d="M18 12 L18 36" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                    class="text-cyan-400 group-hover:text-white transition-colors">
+                    <animate attributeName="stroke-dasharray" values="0,24;24,0;0,24" dur="1.5s"
+                        repeatCount="indefinite" />
+                    <animate attributeName="stroke-dashoffset" values="0;-24;0" dur="1.5s" repeatCount="indefinite" />
+                </path>
+
+                <!-- Ponta da seta -->
+                <path d="M12 32 L18 38 L24 32" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round"
+                    class="text-cyan-400 group-hover:text-white transition-colors" />
+            </svg>
+        </a>
     </section>
 
     <section class="py-20 bg-gray-100">
@@ -89,22 +292,22 @@
                     </div>
                 </div>
 
-                <!-- Imagem / Vídeo -->
-                <div class="flex-1 relative">
-                    <div class="mx-auto max-w-full">
-                        <div class="relative rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-500"
-                            style="aspect-ratio: 4 / 3;">
-                            <iframe class="absolute top-0 left-0 w-full h-full"
-                                src="https://www.youtube.com/embed/2_6m0sThcSw?rel=0" title="SUTICON SOLUÇÕES EM T.I."
-                                loading="lazy" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                            </iframe>
+                <!-- Vídeo do YouTube (Responsivo) -->
+                <div class="flex-1 w-full">
+                    <div class="relative rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-500
+                          aspect-video">
 
-                            <!-- Efeito de brilho suave -->
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500">
-                            </div>
+                        <!-- YouTube Embed (com autoplay desativado para mobile) -->
+                        <iframe class="absolute top-0 left-0 w-full h-full"
+                            src="https://www.youtube.com/embed/2_6m0sThcSw?rel=0&modestbranding=1&autoplay=0&mute=0&controls=1&showinfo=0"
+                            title="SUTICON SOLUÇÕES EM T.I." loading="lazy" frameborder="0"
+                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
+
+                        <!-- Efeito de brilho suave no hover -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent 
+                                opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none">
                         </div>
                     </div>
                 </div>
@@ -113,24 +316,51 @@
         </div>
     </section>
 
-    <!-- Vídeo Institucional -->
+    <!-- sectio 24h... -->
     <section class="relative py-24 bg-gradient-to-b from-gray-50 to-gray-100" aria-labelledby="video-title">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-2xl md:text-5xl font-extrabold text-gray-800 mb-6">
-                24 horas no ar! Levando tranquilidade para sua empresa.
+        <div class="container mx-auto px-6">
+
+            <!-- Título com destaque sutil -->
+            <h2 id="video-title"
+                class="text-3xl md:text-5xl font-extrabold text-gray-800 text-center mb-6 leading-tight">
+                24 horas no ar!<br>
+                <span class="text-cyan-600">Levando tranquilidade para sua empresa.</span>
             </h2>
-            <div class="space-y-6 text-lg leading-relaxed">
-                <p>
-                    Nosso suporte é um canal direto entre nossos especialistas e você. Presencialmente ou on-line, conte
-                    sempre conosco para solucionar os problemas do dia a dia. Um modelo de gerenciamento que garante uma
-                    maior produtividade e reduz de maneira significativa falhas nos seus equipamentos.
-                </p>
-                <p>Soluções tecnológicas que cabem no seu bolso!</p>
-                <p>Seja por meio de outsourcing, consultoria especializada em gestão de T.I, monitoramento de dados,
-                    identificação de vulnerabilidades ou até mesmo a manutenção de seus equipamentos, a SUTICON oferece
-                    a solução ideal para atender às suas necessidades, com um excelente custo-benefício.</p>
+
+            <!-- Linha decorativa centralizada -->
+            <div class="flex justify-center mb-10">
+                <div class="w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full"></div>
             </div>
 
+            <!-- Texto alinhado e com espaçamento refinado -->
+            <div class="max-w-4xl mx-auto text-center space-y-7 text-lg leading-relaxed text-gray-700">
+
+                <p>
+                    Nosso suporte é um canal direto entre nossos especialistas e você.
+                    <strong class="text-gray-800">Presencialmente ou online</strong>, conte sempre conosco
+                    para solucionar os problemas do dia a dia. Um modelo de gerenciamento que garante
+                    <span class="text-cyan-600 font-medium">maior produtividade</span> e reduz de maneira
+                    significativa falhas nos seus equipamentos.
+                </p>
+
+                <p class="font-bold text-gray-800 text-xl">
+                    Soluções tecnológicas que cabem no seu bolso!
+                </p>
+
+                <p>
+                    Seja por meio de <strong>outsourcing</strong>, <strong>consultoria especializada em gestão de
+                        T.I.</strong>,
+                    <strong>monitoramento de dados</strong>, <strong>identificação de vulnerabilidades</strong> ou até
+                    mesmo
+                    a <strong>manutenção de seus equipamentos</strong>, a <span
+                        class="text-cyan-600 font-semibold">SUTICON</span>
+                    oferece a solução ideal para atender às suas necessidades, com um
+                    <span class="underline decoration-cyan-500/50 decoration-2 underline-offset-4">excelente
+                        custo-benefício</span>.
+                </p>
+            </div>
+
+        </div>
     </section>
 
     <!-- Nossos Diferenciais -->
@@ -144,19 +374,7 @@
                 em soluções de tecnologia.
             </p>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
-                <!-- Card -->
-                <div
-                    class="group bg-white rounded-2xl p-8 text-center shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-500">
-                    <div
-                        class="w-20 h-20 rounded-full bg-cyan-500/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-cyan-500/20 transition-colors">
-                        <i class="fas fa-shield-alt text-cyan-500 text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800">Garantia Estendida</h3>
-                    <p class="text-gray-600 leading-relaxed">Produtos com garantia estendida e suporte técnico
-                        especializado.</p>
-                </div>
-
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
                 <!-- Card -->
                 <div
                     class="group bg-white rounded-2xl p-8 text-center shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-500">
@@ -164,9 +382,8 @@
                         class="w-20 h-20 rounded-full bg-cyan-500/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-cyan-500/20 transition-colors">
                         <i class="fas fa-headset text-cyan-500 text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800">Atendimento 24/7</h3>
-                    <p class="text-gray-600 leading-relaxed">Equipe disponível para tirar suas dúvidas a qualquer
-                        momento.</p>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Profissional e confiável</h3>
+                    <p class="text-gray-600 leading-relaxed">Nosso diferencial está no atendimento ágil e personalizado durante o horário comercial. Priorizamos resolver as demandas dos nossos clientes com rapidez e eficiência, garantindo suporte completo e comunicação clara dentro do expediente.</p>
                 </div>
 
                 <!-- Card -->
@@ -301,7 +518,7 @@
     </section>
 
     <!-- Call to Action -->
-    <section class="py-20 bg-cyan-500 text-white" aria-labelledby="cta-title">
+    <section class="py-20 bg-cyan-700 text-white" aria-labelledby="cta-title">
         <div class="container px-4 mx-auto text-center">
             <h2 id="cta-title" class="text-4xl font-bold mb-6">Pronto para Conhecer Nossas Soluções?</h2>
             <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">
@@ -309,10 +526,7 @@
                 ajudar você a encontrar a tecnologia perfeita
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/produtos"
-                    class="inline-block px-8 py-3 bg-gray-800 text-white font-semibold rounded-lg hover:bg-gray-700 transition text-lg">Ver
-                    Produtos</a>
-                <a href="#contato"
+                <a href="/pages/contato.html"
                     class="inline-block px-8 py-3 bg-transparent border border-white text-white font-semibold rounded-lg hover:bg-white hover:text-cyan-500 transition text-lg">Fale
                     Conosco</a>
             </div>
@@ -323,10 +537,7 @@
     <div id="footer"></div>
 
     <script src="/assets/js/main.js"></script>
-
-    <script src="/assets/js/captcha.js"></script>
-    <script src="/assets/js/number.js"></script>
-    <script src="/assets/js/carosuelClientes.js"></script>
+    <script src="/assets/js/menu-mobile.js"></script>
 
 </body>
 

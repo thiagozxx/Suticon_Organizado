@@ -23,19 +23,19 @@ if (!isset($_POST['captcha'], $_POST['captcha_resultado'])) {
     exit();
 }
 
-$resposta_usuario = (int) $_POST['captcha'];
-$valor_correto = (int) $_POST['captcha_resultado'];
-
-if ($resposta_usuario !== $valor_correto) {
+$resposta_usuario = (int) ($_POST['captcha'] ?? 0);
+if (!isset($_SESSION['captcha_result']) || $resposta_usuario !== $_SESSION['captcha_result']) {
+    unset($_SESSION['captcha_result']);
     header("Location: {$pagina_origem}?erro=captcha");
     exit();
 }
+unset($_SESSION['captcha_result']);
 
 
-$nome     = htmlspecialchars(trim($_POST['nome']), ENT_QUOTES, 'UTF-8');
-$empresa  = htmlspecialchars(trim($_POST['company']), ENT_QUOTES, 'UTF-8');
+$nome = htmlspecialchars(trim($_POST['nome']), ENT_QUOTES, 'UTF-8');
+$empresa = htmlspecialchars(trim($_POST['company']), ENT_QUOTES, 'UTF-8');
 $telefone = htmlspecialchars(trim($_POST['phone']), ENT_QUOTES, 'UTF-8');
-$email    = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
+$email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
 $mensagem = htmlspecialchars(trim($_POST['message']), ENT_QUOTES, 'UTF-8');
 
 
@@ -70,8 +70,7 @@ if ($geo) {
     }
 }
 
-// E-mail
-$destino = "contato@suticon.com.br";
+$destino = "thiago.carvalho@suticon.com.br";
 $assunto = "Formulário enviado do site";
 
 $corpo = <<<EOD
@@ -110,10 +109,12 @@ $headers = "MIME-Version: 1.0\r\n";
 $headers .= "Content-type: text/html; charset=UTF-8\r\n";
 $headers .= "From: {$email}\r\n";
 $headers .= "Reply-To: {$email}\r\n";
+$header .= "Content-Security-Policy: default-src 'self'\r\n";
 
 // Envia e redireciona
 if (mail($destino, $assunto, $corpo, $headers)) {
-    header("Location: sucesso.php?voltar=" . urlencode($pagina_origem));
+    $voltar = $_POST['pagina_origem'] ?? '/index.html';
+    header("Location: sucesso.php?voltar=" . urlencode($voltar));
     exit();
 } else {
     header("Location: {$pagina_origem}?erro=falha");

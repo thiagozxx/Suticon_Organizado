@@ -38,18 +38,404 @@
 
 <body class="bg-gray-50 text-gray-900 antialiased">
 
-    <div id="header"></div>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5H8HJGCW" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
 
+    <nav
+        class="fixed w-full z-50 top-0 left-0 border-b border-gray-200 shadow-md bg-white md:bg-white/80 md:backdrop-blur-md transition-colors duration-300">
+        <div class="max-w-screen-xl flex items-center justify-between mx-auto p-4">
+            <a href="/index.html" class="flex items-center space-x-3 rtl:space-x-reverse" aria-label="Voltar para Home">
+                <img src="/assets/images/logo_suticon.png" class="h-12" alt="Logo Suticon" loading="lazy">
+            </a>
 
+            <button id="open-menu" class="md:hidden focus:outline-none" aria-label="Abrir menu" aria-expanded="false">
+                <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
 
+            <!-- Menu Desktop -->
+            <ul class="hidden md:flex space-x-8 text-cyan-900 font-medium">
+                <li><a href="/index.html" class="hover:text-cyan-600 hover:underline transition">Home</a></li>
+                <li><a href="/pages/sobre.html" class="hover:text-cyan-600 hover:underline transition">Sobre</a></li>
+                <li class="relative group has-submenu">
+                    <a href="javascript:void(0);"
+                        class="hover:text-cyan-600 hover:underline flex items-center transition" aria-haspopup="true"
+                        aria-expanded="false">
+                        Serviços
+                        <svg class="w-4 h-4 ml-2 transition-transform transform group-hover:rotate-180"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </a>
+                    <ul
+                        class="absolute hidden group-hover:block bg-white text-gray-900 mt-2 space-y-2 py-2 w-48 rounded-lg shadow-lg border border-gray-200 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                        <li><a href="/pages/helpdesk.html"
+                                class="block px-4 py-2 hover:bg-cyan-50 hover:text-cyan-700 transition">Help Desk</a>
+                        </li>
+                        <li><a href="/pages/antivirus.html"
+                                class="block px-4 py-2 hover:bg-cyan-50 hover:text-cyan-700 transition">Antivírus /
+                                Endpoint</a></li>
+                        <li><a href="/pages/infraestrutura-rede.html"
+                                class="block px-4 py-2 hover:bg-cyan-50 hover:text-cyan-700 transition">Infraestrutura</a>
+                        </li>
+                        <li><a href="/pages/servidor.html"
+                                class="block px-4 py-2 hover:bg-cyan-50 hover:text-cyan-700 transition">Servidor</a>
+                        </li>
+                        <li><a href="/pages/firewall.html"
+                                class="block px-4 py-2 hover:bg-cyan-50 hover:text-cyan-700 transition">Firewall</a>
+                        </li>
+                        <li><a href="/pages/backupemnuvem.html"
+                                class="block px-4 py-2 hover:bg-cyan-50 hover:text-cyan-700 transition">Backup em
+                                Nuvem</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="/pages/projetosespeciais.html" class="hover:text-cyan-600 hover:underline transition"
+                        target="_blank">Projetos Especiais</a></li>
+                <li><a href="/pages/equipe.html" class="hover:text-cyan-600 hover:underline transition">Equipe</a></li>
+                <li><a href="/pages/contato.html" class="hover:text-cyan-600 hover:underline transition">Contato</a>
+                </li>
+                <li class="relative group has-submenu">
+                    <a href="javascript:void(0);" class="flex items-center hover:text-cyan-600 transition"
+                        aria-haspopup="true" aria-expanded="false">
+                        Mais
+                        <svg class="w-4 h-4 ml-2 transition-transform group-hover:rotate-180" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </a>
+                    <ul
+                        class="absolute hidden group-hover:block bg-white rounded-lg shadow-lg border border-gray-200 py-2 mt-2 w-48 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                        <li><a href="https://blog.suticon.com.br/" class="block px-4 py-2 hover:bg-cyan-50"
+                                target="_blank">Blog</a></li>
+                        <li><a href="/loja/index.html" class="block px-4 py-2 hover:bg-cyan-50">Loja</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <a href="https://crm.suticon.com.br/"
+                class="text-white bg-cyan-600 rounded-full px-6 py-2 hover:bg-cyan-700 hidden md:block transition transform hover:scale-105">
+                Área do Cliente
+            </a>
+        </div>
+
+        <!-- Overlay -->
+        <div class="off-canvas-overlay fixed inset-0 bg-black/60 z-40 hidden opacity-0 transition-opacity duration-400">
+        </div>
+
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" aria-hidden="true"
+            class="fixed inset-y-0 right-0 h-full w-80 max-w-[320px] bg-white text-gray-900 font-medium transform translate-x-full transition-transform duration-400 ease-in-out z-50 shadow-[-4px_0_10px_rgba(0,0,0,0.08)] overflow-y-auto pb-8">
+            <button id="close-menu" class="absolute top-4 right-4 focus:outline-none p-2 rounded-full hover:bg-cyan-50"
+                aria-label="Fechar menu">
+                <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+            <ul class="flex flex-col space-y-2 pt-16 p-6 text-gray-900">
+                <li><a href="/index.html"
+                        class="block px-4 py-3 text-lg font-medium hover:bg-cyan-50 hover:text-cyan-700 transition flex items-center gap-2"><i
+                            class="fas fa-home"></i>Home</a></li>
+                <li><a href="/pages/sobre.html"
+                        class="block px-4 py-3 text-lg font-medium hover:bg-cyan-50 hover:text-cyan-700 transition flex items-center gap-2"><i
+                            class="fas fa-info-circle"></i>Sobre</a></li>
+                <li>
+                    <button id="services-toggle"
+                        class="w-full text-left px-4 py-3 text-lg font-medium hover:bg-cyan-50 text-gray-900 flex justify-between items-center"
+                        aria-expanded="false" aria-label="Expandir menu de serviços">
+                        <span class="flex items-center gap-2"><i class="fas fa-tools"></i>Serviços</span>
+                        <svg class="w-4 h-4 text-gray-900 transition-transform" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <ul id="services-menu" class="pl-8 space-y-2 text-gray-900" role="menu"
+                        style="max-height: 0; opacity: 0; overflow: hidden; transition: max-height 0.3s ease, opacity 0.3s ease;">
+                        <li><a href="/pages/helpdesk.html"
+                                class="block px-4 py-2 hover:bg-cyan-50 hover:text-cyan-700 transition flex items-center gap-2"><i
+                                    class="fas fa-headset"></i>Help Desk</a></li>
+                        <li><a href="/pages/antivirus.html"
+                                class="block px-4 py-2 hover:bg-cyan-50 hover:text-cyan-700 transition flex items-center gap-2"><i
+                                    class="fas fa-shield-alt"></i>Antivírus / Endpoint</a></li>
+                        <li><a href="/pages/infraestrutura-rede.html"
+                                class="block px-4 py-2 hover:bg-cyan-50 hover:text-cyan-700 transition flex items-center gap-2"><i
+                                    class="fas fa-network-wired"></i>Infraestrutura</a></li>
+                        <li><a href="/pages/servidor.html"
+                                class="block px-4 py-2 hover:bg-cyan-50 hover:text-cyan-700 transition flex items-center gap-2"><i
+                                    class="fas fa-server"></i>Servidor</a></li>
+                        <li><a href="/pages/firewall.html"
+                                class="block px-4 py-2 hover:bg-cyan-50 hover:text-cyan-700 transition flex items-center gap-2"><i
+                                    class="fas fa-shield"></i>Firewall</a></li>
+                        <li><a href="/pages/backupemnuvem.html"
+                                class="block px-4 py-2 hover:bg-cyan-50 hover:text-cyan-700 transition flex items-center gap-2"><i
+                                    class="fas fa-cloud-upload-alt"></i>Backup em Nuvem</a></li>
+                    </ul>
+                </li>
+                <li><a href="/pages/projetosespeciais.html"
+                        class="block px-4 py-3 text-lg font-medium hover:bg-cyan-50 hover:text-cyan-700 transition flex items-center gap-2"
+                        target="_blank"><i class="fas fa-project-diagram"></i>Projetos Especiais</a></li>
+                <li><a href="/pages/equipe.html"
+                        class="block px-4 py-3 text-lg font-medium hover:bg-cyan-50 hover:text-cyan-700 transition flex items-center gap-2"><i
+                            class="fas fa-users"></i>Equipe</a></li>
+                <li><a href="/pages/contato.html"
+                        class="block px-4 py-3 text-lg font-medium hover:bg-cyan-50 hover:text-cyan-700 transition flex items-center gap-2"><i
+                            class="fas fa-envelope"></i>Contato</a></li>
+                <li>
+                    <button id="more-toggle"
+                        class="w-full text-left px-4 py-3 text-lg font-medium hover:bg-cyan-50 text-gray-900 flex justify-between items-center"
+                        aria-expanded="false" aria-label="Expandir menu Mais">
+                        <span class="flex items-center gap-2"><i class="fas fa-ellipsis-h"></i>Mais</span>
+                        <svg class="w-4 h-4 text-gray-900 transition-transform" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <ul id="more-menu" class="pl-8 space-y-2 text-gray-900" role="menu"
+                        style="max-height: 0; opacity: 0; overflow: hidden; transition: max-height 0.3s ease, opacity 0.3s ease;">
+                        <li><a href="https://blog.suticon.com.br/"
+                                class="block px-4 py-2 hover:bg-cyan-50 hover:text-cyan-700 transition flex items-center gap-2"
+                                target="_blank"><i class="fas fa-blog"></i>Blog</a></li>
+                        <li><a href="/loja/index.html"
+                                class="block px-4 py-2 hover:bg-cyan-50 hover:text-cyan-700 transition flex items-center gap-2"><i
+                                    class="fas fa-shopping-cart"></i>Loja</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://crm.suticon.com.br/"
+                        class="block px-4 py-3 text-lg font-medium text-white bg-cyan-600 rounded-full hover:bg-cyan-700 transition flex items-center gap-2"><i
+                            class="fas fa-user-circle"></i>Área do Cliente</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section
+        class="relative min-h-[60vh] flex items-center bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden bg-blob">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+
+                <!-- Texto -->
+                <div class="space-y-6 animate-fade">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
+                        Contrate um de Nossos <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-700">
+                            Projetos Especiais
+                        </span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-600 leading-relaxed">
+                        Conheça ferramentas exclusivas de <strong class="text-cyan-700">segurança da informação</strong>
+                        desenvolvidas para empresas que exigem o melhor.
+                    </p>
+                    <button onclick="abrirWhatsApp('Olá! Quero conhecer os Projetos Especiais da SUTICON.')" class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-600 to-blue-700 text-white font-bold text-lg rounded-full 
+                         shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                        Falar com Especialista
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Imagem -->
+                <div class="flex justify-center animate-fade" style="animation-delay: 0.2s;">
+                    <img src="/assets/images/svg/projetosespeciais.svg" alt="Projetos Especiais SUTICON"
+                        class="w-full max-w-lg drop-shadow-2xl hover:scale-105 transition-transform duration-300">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HEADER -->
+    <section class="py-16 bg-gradient-to-br from-cyan-600 to-cyan-700">
+        <div class="container mx-auto px-6 text-center max-w-6xl">
+            <h2 class="text-3xl md:text-5xl font-extrabold text-white">
+                Soluções de TI que Impulsionam o Seu Negócio
+            </h2>
+            <p class="mt-4 text-lg text-cyan-100">
+                Projetos especiais para desafios únicos — com a expertise que você precisa.
+            </p>
+        </div>
+    </section>
+
+    <!-- PROJETOS ESPECIAIS -->
+    <section class="py-20 bg-gradient-to-b from-white to-gray-50">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="text-center mb-16 animate-fade">
+                <h3 class="text-4xl md:text-5xl font-bold text-gray-800">
+                    Nossos <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-700">
+                        Projetos Especiais
+                    </span>
+                </h3>
+                <div class="w-32 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 mx-auto rounded-full mt-6"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- LGPD -->
+                <div
+                    class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 border border-gray-100 animate-fade card-delay-1">
+                    <div class="w-48 h-48 mx-auto mb-6 flex items-center justify-center">
+                        <img src="/assets/images/icons/LGPD.png" alt="Adequação LGPD"
+                            class="w-full h-full object-contain drop-shadow-md">
+                    </div>
+                    <h4 class="text-xl font-bold text-center text-gray-800 mb-4">Adequação Completa à LGPD</h4>
+                    <p class="text-gray-600 text-center text-sm leading-relaxed">
+                        Conformidade total com a Lei Geral de Proteção de Dados. <strong class="text-cyan-700">Evite
+                            multas milionárias</strong> com mapeamento, consultoria, processos e treinamentos
+                        personalizados.
+                    </p>
+                </div>
+
+                <!-- With Secure -->
+                <div
+                    class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 border border-gray-100 animate-fade card-delay-2">
+                    <div class="w-48 h-48 mx-auto mb-6 flex items-center justify-center">
+                        <img src="/assets/images/icons/with.png" alt="With Secure"
+                            class="w-full h-full object-contain drop-shadow-md">
+                    </div>
+                    <h4 class="text-xl font-bold text-center text-gray-800 mb-4">Proteção Avançada com With Secure</h4>
+                    <p class="text-gray-600 text-center text-sm leading-relaxed">
+                        Antivírus de última geração que <strong class="text-emerald-600">bloqueia ransomware, malware e
+                            ataques zero-day</strong> com IA preditiva.
+                    </p>
+                </div>
+
+                <!-- Gestão de Riscos -->
+                <div
+                    class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 border border-gray-100 animate-fade card-delay-1">
+                    <div class="w-48 h-48 mx-auto mb-6 flex items-center justify-center">
+                        <img src="/assets/images/icons/gestaoderiscos.png" alt="Gestão de Riscos"
+                            class="w-full h-full object-contain drop-shadow-md">
+                    </div>
+                    <h4 class="text-xl font-bold text-center text-gray-800 mb-4">Gestão de Riscos Proativa</h4>
+                    <p class="text-gray-600 text-center text-sm leading-relaxed">
+                        <strong class="text-orange-600">Testes de penetração, análise de vulnerabilidades e
+                            monitoramento 24/7</strong> para antecipar ameaças.
+                    </p>
+                </div>
+
+                <!-- Backup em Nuvem -->
+                <div
+                    class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 border border-gray-100 animate-fade card-delay-2">
+                    <div class="w-48 h-48 mx-auto mb-6 flex items-center justify-center">
+                        <img src="/assets/images/icons/nuvem.png" alt="Backup em Nuvem"
+                            class="w-full h-full object-contain drop-shadow-md">
+                    </div>
+                    <h4 class="text-xl font-bold text-center text-gray-800 mb-4">Backup em Nuvem Inteligente</h4>
+                    <p class="text-gray-600 text-center text-sm leading-relaxed">
+                        Backups criptografados, otimizados e com <strong class="text-sky-600">recuperação em
+                            minutos</strong>. Dados seguros no Brasil.
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center mt-16 animate-fade" style="animation-delay: 0.4s;">
+                <button onclick="abrirWhatsApp('Quero mais detalhes sobre os Projetos Especiais.')" class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-600 to-blue-700 text-white font-bold text-lg rounded-full 
+                       shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                    Solicitar Proposta
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- POR QUE ESCOLHER SUTICON -->
+    <section class="py-20 bg-gradient-to-b from-gray-50 to-white">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="text-center mb-16 animate-fade">
+                <h3 class="text-4xl md:text-5xl font-bold text-gray-800">
+                    Por que Escolher a <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-700">
+                        SUTICON
+                    </span>?
+                </h3>
+                <div class="w-32 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 mx-auto rounded-full mt-6"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center animate-fade card-delay-1">
+                    <div class="w-20 h-20 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-award text-cyan-600 text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-2">Segurança</h4>
+                    <p class="text-gray-600 text-sm">Servidor com máxima segurança física e digital.</p>
+                </div>
+
+                <div class="text-center animate-fade card-delay-2">
+                    <div class="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-headset text-emerald-600 text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-2">Suporte especializado</h4>
+                    <p class="text-gray-600 text-sm">Equipe técnica especializada sempre disponível.</p>
+                </div>
+
+                <div class="text-center animate-fade card-delay-3">
+                    <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-handshake text-blue-600 text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-2">Parceria de Longo Prazo</h4>
+                    <p class="text-gray-600 text-sm">Crescemos junto com sua empresa, com soluções escaláveis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PASSOS -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="text-center mb-16 animate-fade">
+                <h3 class="text-4xl md:text-5xl font-bold text-gray-800">
+                    Contrate em <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-700">3
+                        Passos</span>
+                </h3>
+                <div class="w-32 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 mx-auto rounded-full mt-6"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center animate-fade card-delay-1">
+                    <div
+                        class="w-16 h-16 bg-cyan-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                        1</div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-2">Fale com um Especialista</h4>
+                    <p class="text-gray-600 text-sm">Entenda qual projeto é ideal para sua empresa.</p>
+                </div>
+
+                <div class="text-center animate-fade card-delay-2">
+                    <div
+                        class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                        2</div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-2">Receba Proposta Personalizada</h4>
+                    <p class="text-gray-600 text-sm">Orçamento detalhado em até 24h.</p>
+                </div>
+
+                <div class="text-center animate-fade card-delay-3">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-cyan-600 to-blue-700 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                        3</div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-2">Comece a Proteger</h4>
+                    <p class="text-gray-600 text-sm">Implantação rápida e suporte contínuo.</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <button onclick="abrirWhatsApp('Quero contratar um Projeto Especial agora!')" class="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-cyan-600 to-blue-700 text-white font-bold text-xl rounded-full 
+                       shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300">
+                    Iniciar Agora
+                    <i class="fas fa-rocket"></i>
+                </button>
+            </div>
+        </div>
+    </section>
 
 
     <div id="footer"></div>
 
     <script src="/assets/js/main.js"></script>
-    <script src="/assets/js/captcha.js"></script>
-    <script src="/assets/js/number.js"></script>
-    <script src="/assets/js/carosuelClientes.js"></script>
+    <script src="/assets/js/menu-mobile.js"></script>
+
 
 </body>
 
