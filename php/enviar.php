@@ -3,7 +3,6 @@ session_start();
 
 $pagina_origem = $_POST['pagina_origem'] ?? $_SERVER['HTTP_REFERER'] ?? 'index.html';
 
-
 if (strpos($pagina_origem, 'http') === 0) {
     $host_permitido = parse_url($pagina_origem, PHP_URL_HOST);
     if ($host_permitido && !in_array($host_permitido, ['suticon.com.br', 'www.suticon.com.br'])) {
@@ -11,14 +10,12 @@ if (strpos($pagina_origem, 'http') === 0) {
     }
 }
 
-
 if (!empty($_POST['website'])) {
     header("Location: {$pagina_origem}?erro=bot");
     exit();
 }
 
-
-if (!isset($_POST['captcha'], $_POST['captcha_resultado'])) {
+if (!isset($_POST['captcha'])) {  // Removido , $_POST['captcha_resultado']
     header("Location: {$pagina_origem}?erro=captcha_faltando");
     exit();
 }
@@ -31,13 +28,11 @@ if (!isset($_SESSION['captcha_result']) || $resposta_usuario !== $_SESSION['capt
 }
 unset($_SESSION['captcha_result']);
 
-
 $nome = htmlspecialchars(trim($_POST['nome']), ENT_QUOTES, 'UTF-8');
 $empresa = htmlspecialchars(trim($_POST['company']), ENT_QUOTES, 'UTF-8');
 $telefone = htmlspecialchars(trim($_POST['phone']), ENT_QUOTES, 'UTF-8');
 $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
 $mensagem = htmlspecialchars(trim($_POST['message']), ENT_QUOTES, 'UTF-8');
-
 
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     header("Location: {$pagina_origem}?erro=email");
@@ -51,7 +46,6 @@ if (strlen($nome) > 100 || strlen($email) > 100 || strlen($mensagem) > 1000) {
     header("Location: {$pagina_origem}?erro=tamanho");
     exit();
 }
-
 
 $ip = $_SERVER['REMOTE_ADDR'];
 $detalhes_local = "Localização não disponível.";
@@ -109,7 +103,11 @@ $headers = "MIME-Version: 1.0\r\n";
 $headers .= "Content-type: text/html; charset=UTF-8\r\n";
 $headers .= "From: {$email}\r\n";
 $headers .= "Reply-To: {$email}\r\n";
-$header .= "Content-Security-Policy: default-src 'self'\r\n";
+$headers .= "Content-Security-Policy: default-src 'self'\r\n";  // Corrigido o typo de $header para $headers
+
+// Logs para depuração (comente após testar)
+error_log("Sessão CAPTCHA no envio: " . ($_SESSION['captcha_result'] ?? 'Nenhuma'));
+error_log("Resposta do usuário: " . $resposta_usuario);
 
 // Envia e redireciona
 if (mail($destino, $assunto, $corpo, $headers)) {

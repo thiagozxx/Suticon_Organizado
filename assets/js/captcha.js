@@ -1,4 +1,3 @@
-
 (() => {
     /**
      * Loads CAPTCHA from the server.
@@ -9,11 +8,9 @@
             if (!response.ok) throw new Error('Erro ao carregar CAPTCHA');
             const data = await response.json();
             const captchaContainer = document.getElementById('captcha-container');
-            const captchaInput = document.getElementById('captcha_resultado');
-            if (captchaContainer && captchaInput) {
+            if (captchaContainer) {
                 captchaContainer.textContent = `Quanto é ${data.num1} + ${data.num2}?`;
                 captchaContainer.setAttribute('aria-live', 'polite');
-                captchaInput.value = data.resultado;
             }
         } catch (err) {
             console.error('Erro ao carregar CAPTCHA:', err);
@@ -85,6 +82,19 @@
         loadCaptcha();
         displayError();
         initPhoneInput();
+
+        // Validação client-side para CAPTCHA no submit
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            const container = document.getElementById('captcha-container');
+            if (container.textContent.includes('Carregando') || container.textContent.includes('Erro')) {
+                e.preventDefault();
+                const erroPopup = document.getElementById('erro-popup');
+                const erroTexto = document.getElementById('erro-texto');
+                erroTexto.textContent = 'CAPTCHA não carregado. Tente recarregar.';
+                erroPopup.classList.remove('hidden');
+                setTimeout(() => erroPopup.classList.add('hidden'), 5000);
+            }
+        });
     }
 
     document.addEventListener('DOMContentLoaded', init);
