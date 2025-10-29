@@ -56,123 +56,81 @@
         </div>
     </section>
 
-    <!-- Nossa História -->
     <section class="py-20 bg-gray-100">
-        <div class="container px-4">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-4xl font-bold mb-6">Nossa História</h2>
-                    <div class="space-y-4 text-lg text-gray-600">
-                        <p>Fundada com o propósito de democratizar o acesso à tecnologia de qualidade, a SUTICON nasceu
-                            da paixão por conectar pessoas às melhores soluções em informática.</p>
-                        <p>Ao longo dos anos, consolidamos nossa posição como referência no mercado, construindo
-                            relacionamentos duradouros baseados em confiança, transparência e compromisso com a
-                            excelência.</p>
-                        <p>Hoje, atendemos desde usuários domésticos até grandes empresas, oferecendo um portfólio
-                            completo de produtos e serviços que atendem às mais diversas necessidades tecnológicas.</p>
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+
+                <!-- Texto -->
+                <div class="flex-1 text-gray-700">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-8 relative">
+                        Nossa História
+                        <span class="absolute left-0 -bottom-2 w-24 h-1 bg-cyan-600 rounded-full"></span>
+                    </h2>
+                    <div class="space-y-6 text-lg leading-relaxed">
+                        <p>
+                            Há mais de 16 anos oferecemos aos nossos clientes assessoria exclusiva com produtos modernos
+                            e inovadores, minimizando riscos com ampla segurança e atendimento personalizado sob medida,
+                            de acordo com as necessidades do seu negócio.
+                        </p>
+                        <p>
+                            Nosso time de especialistas e consultores em outsourcing é composto por profissionais
+                            experientes e multidisciplinares prontos para apoiar sua empresa nas atividades voltadas
+                            para Tecnologia da Informação.
+                        </p>
+                        <p>
+                            Levamos ao seu negócio o que ele precisa para crescer de forma segura e constante,
+                            otimizando seu investimento de maneira inteligente e prática.
+                        </p>
+                        <p>
+                            Nossos produtos e serviços englobam soluções que melhoram processos de decisão, estratégias
+                            e alternativas de investimento — sempre adaptadas à realidade da sua empresa, seja ela
+                            pequena, média ou grande.
+                        </p>
                     </div>
                 </div>
-                <div class="relative h-[400px] rounded-lg overflow-hidden shadow-2xl">
-                    <img src="team.jpg" alt="Equipe SUTICON" class="w-full h-full object-cover">
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Missão, Visão e Valores -->
-    <section class="py-20">
-        <div class="container px-4">
-            <h2 class="text-4xl font-bold text-center mb-16">Missão, Visão e Valores</h2>
-            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Imagem / Vídeo -->
+                <div class="flex-1 relative">
+                    <div class="mx-auto max-w-full">
+                        <div class="relative rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-500"
+                            style="aspect-ratio: 4 / 3;">
+                            <iframe class="absolute top-0 left-0 w-full h-full"
+                                src="https://www.youtube.com/embed/2_6m0sThcSw?rel=0" title="SUTICON SOLUÇÕES EM T.I."
+                                loading="lazy" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
 
-                <!-- Missão -->
-                <div class="border p-6 rounded-lg hover:border-blue-500 transition">
-                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-4">
-                        <!-- SVG icon aqui -->
-                        <svg class="w-8 h-8 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M..." />
-                        </svg>
+                            <!-- Efeito de brilho suave -->
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500">
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Missão</h3>
-                    <p class="text-gray-600">Fornecer soluções tecnológicas de alta qualidade, com atendimento
-                        personalizado e preços competitivos, contribuindo para o crescimento e sucesso de nossos
-                        clientes.</p>
-                </div>
-
-                <!-- Visão -->
-                <div class="border p-6 rounded-lg hover:border-blue-500 transition">
-                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-4">
-                        <svg class="w-8 h-8 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M..." />
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Visão</h3>
-                    <p class="text-gray-600">Ser reconhecida como a melhor opção em tecnologia da informática,
-                        referência em inovação, qualidade de produtos e excelência no atendimento ao cliente.</p>
-                </div>
-
-                <!-- Valores -->
-                <div class="border p-6 rounded-lg hover:border-blue-500 transition">
-                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-4">
-                        <svg class="w-8 h-8 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M..." />
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Valores</h3>
-                    <ul class="space-y-2 text-gray-600">
-                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0">
-                                <path d="M..." />
-                            </svg>Integridade e transparência</li>
-                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0">
-                                <path d="M..." />
-                            </svg>Compromisso com a qualidade</li>
-                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0">
-                                <path d="M..." />
-                            </svg>Foco no cliente</li>
-                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0">
-                                <path d="M..." />
-                            </svg>Inovação constante</li>
-                    </ul>
                 </div>
 
             </div>
         </div>
     </section>
-
-    <!-- Gradiente decorativo inferior -->
-    <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-cyan-500/5 to-transparent pointer-events-none">
-    </div>
-    </section>
-
 
     <!-- Vídeo Institucional -->
     <section class="relative py-24 bg-gradient-to-b from-gray-50 to-gray-100" aria-labelledby="video-title">
         <div class="container mx-auto px-6 text-center">
-            <h2 id="video-title" class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-6">
-                Conheça Nossa Estrutura
+            <h2 class="text-2xl md:text-5xl font-extrabold text-gray-800 mb-6">
+                24 horas no ar! Levando tranquilidade para sua empresa.
             </h2>
-            <p class="max-w-2xl mx-auto text-gray-600 mb-12">
-                Assista ao nosso vídeo institucional e veja de perto como trabalhamos para entregar tecnologia,
-                inovação e excelência em cada projeto.
-            </p>
-
-            <div class="mx-auto max-w-3xl md:max-w-4xl">
-                <div class="relative rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-shadow duration-500"
-                    style="aspect-ratio: 4 / 3;">
-                    <iframe class="absolute top-0 left-0 w-full h-full"
-                        src="https://www.youtube.com/embed/2_6m0sThcSw?rel=0" title="SUTICON SOLUÇÕES EM T.I."
-                        loading="lazy" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                    </iframe>
-
-                    <!-- Efeito de brilho suave ao passar o mouse -->
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500">
-                    </div>
-                </div>
+            <div class="space-y-6 text-lg leading-relaxed">
+                <p>
+                    Nosso suporte é um canal direto entre nossos especialistas e você. Presencialmente ou on-line, conte
+                    sempre conosco para solucionar os problemas do dia a dia. Um modelo de gerenciamento que garante uma
+                    maior produtividade e reduz de maneira significativa falhas nos seus equipamentos.
+                </p>
+                <p>Soluções tecnológicas que cabem no seu bolso!</p>
+                <p>Seja por meio de outsourcing, consultoria especializada em gestão de T.I, monitoramento de dados,
+                    identificação de vulnerabilidades ou até mesmo a manutenção de seus equipamentos, a SUTICON oferece
+                    a solução ideal para atender às suas necessidades, com um excelente custo-benefício.</p>
             </div>
-        </div>
+
     </section>
 
     <!-- Nossos Diferenciais -->
@@ -360,12 +318,11 @@
             </div>
         </div>
     </section>
-    </main>
+
 
     <div id="footer"></div>
+
     <script src="/assets/js/main.js"></script>
-    <script src="/assets/js/menu.js"></script>
-    <script src="/assets/js/header.js"></script>
 
     <script src="/assets/js/captcha.js"></script>
     <script src="/assets/js/number.js"></script>
