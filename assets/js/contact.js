@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
   
     // Carregar CAPTCHA
     function carregarCaptcha() {
-      fetch('/assets/php/gerar-captcha.php')
+      fetch('/php/gerar-captcha.php')
         .then(response => response.json())
         .then(data => {
           captchaContainer.textContent = `Quanto é ${data.num1} + ${data.num2}?`;
