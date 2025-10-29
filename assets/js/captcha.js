@@ -1,7 +1,4 @@
-/**
- * CAPTCHA and form validation for SUTICON website.
- * Handles CAPTCHA generation, error display, and phone input formatting.
- */
+
 (() => {
     /**
      * Loads CAPTCHA from the server.
