@@ -122,3 +122,14 @@
     -moz-animation: scroll 30s linear infinite;
     animation: scroll 30s linear infinite;
 }
+
+#page-body {
+    --navbar-height: 0px;
+    padding-top: var(--navbar-height) !important;
+    transition: padding-top 0.3s ease;
+  }
+  
+  /* Garante que o conteúdo não fique escondido atrás do nav */
+  main, .container, section:first-of-type {
+    scroll-margin-top: var(--navbar-height, 0px);
+  }

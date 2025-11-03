@@ -32,3 +32,40 @@ function updateYear() {
         console.warn("⚠️ Elemento com ID 'year' não encontrado no footer.");
     }
 }
+
+function adjustContentPadding() {
+    const navbar = document.getElementById('main-nav');
+    const body = document.getElementById('page-body');
+
+    if (!navbar || !body) return;
+
+    const navbarHeight = navbar.getBoundingClientRect().height;
+    
+    body.style.setProperty('--navbar-height', `${navbarHeight}px`);
+  }
+
+  document.addEventListener('DOMContentLoaded', adjustContentPadding);
+
+
+  window.addEventListener('resize', adjustContentPadding);
+
+  const observer = new MutationObserver(adjustContentPadding);
+  const navbar = document.getElementById('main-nav');
+  if (navbar) {
+    observer.observe(navbar, { 
+      attributes: true, 
+      childList: true, 
+      subtree: true 
+    });
+  }
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        adjustContentPadding();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
