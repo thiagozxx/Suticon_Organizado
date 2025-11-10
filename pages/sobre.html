@@ -36,7 +36,7 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5H8HJGCW" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
 
-    <nav
+    <nav id="main-nav"
         class="fixed w-full z-50 top-0 left-0 border-b border-gray-200 shadow-md bg-white md:bg-white/80 md:backdrop-blur-md transition-colors duration-300">
         <div class="max-w-screen-xl flex items-center justify-between mx-auto p-4">
             <a href="/index.html" class="flex items-center space-x-3 rtl:space-x-reverse" aria-label="Voltar para Home">
@@ -53,8 +53,20 @@
 
             <!-- Menu Desktop -->
             <ul class="hidden md:flex space-x-8 text-cyan-900 font-medium">
-                <li><a href="/index.html" class="hover:text-cyan-600 hover:underline transition">Home</a></li>
-                <li><a href="/pages/sobre.html" class="hover:text-cyan-600 hover:underline transition">Sobre</a></li>
+                <li class="group relative overflow-hidden">
+                    <a href="/index.html" class="relative block pb-1 transition-colors hover:text-cyan-600">
+                        Home
+                        <span
+                            class="absolute bottom-0 left-1/2 h-0.5 w-full -translate-x-1/2 scale-x-0 bg-cyan-600 transition-transform duration-300 ease-out group-hover:scale-x-100"></span>
+                    </a>
+                </li>
+                <li class="group relative overflow-hidden">
+                    <a href="/pages/sobre.html" class="relative block pb-1 transition-colors hover:text-cyan-600">
+                        Sobre
+                        <span
+                            class="absolute bottom-0 left-1/2 h-0.5 w-full -translate-x-1/2 scale-x-0 bg-cyan-600 transition-transform duration-300 ease-out group-hover:scale-x-100"></span>
+                    </a>
+                </li>
                 <li class="relative group has-submenu">
                     <a href="javascript:void(0);"
                         class="hover:text-cyan-600 hover:underline flex items-center transition" aria-haspopup="true"
@@ -89,10 +101,27 @@
                         </li>
                     </ul>
                 </li>
-                <li><a href="/pages/projetosespeciais.html" class="hover:text-cyan-600 hover:underline transition"
-                        target="_blank">Projetos Especiais</a></li>
-                <li><a href="/pages/equipe.html" class="hover:text-cyan-600 hover:underline transition">Equipe</a></li>
-                <li><a href="/pages/contato.html" class="hover:text-cyan-600 hover:underline transition">Contato</a>
+                <li class="group relative overflow-hidden">
+                    <a href="/pages/projetosespeciais.html"
+                        class="relative block pb-1 transition-colors hover:text-cyan-600" target="_blank">
+                        Projetos Especiais
+                        <span
+                            class="absolute bottom-0 left-1/2 h-0.5 w-full -translate-x-1/2 scale-x-0 bg-cyan-600 transition-transform duration-300 ease-out group-hover:scale-x-100"></span>
+                    </a>
+                </li>
+                <li class="group relative overflow-hidden">
+                    <a href="/pages/equipe.html" class="relative block pb-1 transition-colors hover:text-cyan-600">
+                        Equipe
+                        <span
+                            class="absolute bottom-0 left-1/2 h-0.5 w-full -translate-x-1/2 scale-x-0 bg-cyan-600 transition-transform duration-300 ease-out group-hover:scale-x-100"></span>
+                    </a>
+                </li>
+                <li class="group relative overflow-hidden">
+                    <a href="/pages/contato.html" class="relative block pb-1 transition-colors hover:text-cyan-600">
+                        Contato
+                        <span
+                            class="absolute bottom-0 left-1/2 h-0.5 w-full -translate-x-1/2 scale-x-0 bg-cyan-600 transition-transform duration-300 ease-out group-hover:scale-x-100"></span>
+                    </a>
                 </li>
                 <li class="relative group has-submenu">
                     <a href="javascript:void(0);" class="flex items-center hover:text-cyan-600 transition"
@@ -113,7 +142,7 @@
             </ul>
 
             <a href="https://crm.suticon.com.br/"
-                class="text-white bg-cyan-600 rounded-full px-6 py-2 hover:bg-cyan-700 hidden md:block transition transform hover:scale-105">
+                class="text-white bg-cyan-600 rounded-full px-6 py-2 hover:bg-cyan-600 hidden md:block transition transform hover:scale-105">
                 Área do Cliente
             </a>
         </div>
@@ -159,7 +188,7 @@
                         <li><a href="/pages/antivirus.html"
                                 class="block px-4 py-2 hover:bg-cyan-50 hover:text-cyan-700 transition flex items-center gap-2"><i
                                     class="fas fa-shield-alt"></i>Antivírus / Endpoint</a></li>
-                        <li><a href="/pages/readequacaoderede.html"
+                        <li><a href="/pages/infraestrutura-rede.html"
                                 class="block px-4 py-2 hover:bg-cyan-50 hover:text-cyan-700 transition flex items-center gap-2"><i
                                     class="fas fa-network-wired"></i>Infraestrutura</a></li>
                         <li><a href="/pages/servidor.html"
@@ -204,29 +233,22 @@
                     </ul>
                 </li>
                 <li><a href="https://crm.suticon.com.br/"
-                        class="block px-4 py-3 text-lg font-medium text-white bg-cyan-600 rounded-full hover:bg-cyan-700 transition flex items-center gap-2"><i
+                        class="block px-4 py-3 text-lg font-medium text-white bg-cyan-600 rounded-full hover:bg-cyan-600 transition flex items-center gap-2"><i
                             class="fas fa-user-circle"></i>Área do Cliente</a></li>
             </ul>
         </div>
     </nav>
 
-    <section class="relative min-h-[75vh] flex items-center justify-center overflow-hidden bg-slate-900 mt-20">
+    <section class="relative min-h-[75vh] flex items-center justify-center overflow-hidden mt-20"
+        style="background-image: url(/assets/images/bg_about.jpg);">
 
-        <!-- Vídeo de Fundo -->
-        <video class="absolute inset-0 w-full h-full object-cover brightness-75 saturate-110" autoplay muted loop
-            playsinline aria-hidden="true">
-            <source src="/assets/video/SUTICON SOLUÇÕES EM T.I..mp4" type="video/mp4">
-        </video>
+        <div class="absolute inset-0 bg-gradient-to-br from-slate-900/70 via-blue-900/50 to-cyan-900/30"></div>
 
-        <!-- Overlay com Gradient Sutil (para legibilidade) -->
-        <div class="absolute inset-0 bg-gradient-to-br from-slate-900/70 via-blue-900/50 to-cyan-900/70"></div>
-
-        <!-- Conteúdo -->
         <div class="relative z-10 container px-4 text-center">
             <div class="max-w-3xl mx-auto">
                 <h1 class="text-5xl md:text-6xl font-bold mb-6 text-white drop-shadow-md animate-fade-in">
                     Sobre a <span
-                        class="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">SUTICON</span>
+                        class="bg-gradient-to-r from-cyan-700 to-cyan-900 bg-clip-text text-transparent">SUTICON</span>
                 </h1>
                 <p class="text-xl md:text-2xl text-cyan-100 font-light animate-fade-in animation-delay-200">
                     Sua parceira de confiança em tecnologia e inovação
@@ -234,27 +256,20 @@
             </div>
         </div>
 
-        <!-- Scroll Down -->
         <a href="#missao" class="absolute bottom-8 left-1/2 transform -translate-x-1/2 group z-20">
             <svg width="36" height="60" viewBox="0 0 36 60" fill="none" xmlns="http://www.w3.org/2000/svg"
                 class="drop-shadow-md group-hover:animate-bounce transition-all duration-300">
-
-                <!-- Contorno do balão (arredondado) -->
                 <rect x="2" y="2" width="32" height="56" rx="16" stroke="currentColor" stroke-width="2.5"
-                    class="text-cyan-300 group-hover:text-white transition-colors duration-300" />
-
-                <!-- Setinha que "rola" -->
+                    class="text-cyan-700 group-hover:text-white transition-colors duration-300" />
                 <path d="M18 12 L18 36" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                    class="text-cyan-400 group-hover:text-white transition-colors">
+                    class="text-cyan-700 group-hover:text-white transition-colors">
                     <animate attributeName="stroke-dasharray" values="0,24;24,0;0,24" dur="1.5s"
                         repeatCount="indefinite" />
                     <animate attributeName="stroke-dashoffset" values="0;-24;0" dur="1.5s" repeatCount="indefinite" />
                 </path>
-
-                <!-- Ponta da seta -->
                 <path d="M12 32 L18 38 L24 32" fill="none" stroke="currentColor" stroke-width="2.5"
                     stroke-linecap="round" stroke-linejoin="round"
-                    class="text-cyan-400 group-hover:text-white transition-colors" />
+                    class="text-cyan-700 group-hover:text-white transition-colors" />
             </svg>
         </a>
     </section>
@@ -265,9 +280,9 @@
 
                 <!-- Texto -->
                 <div class="flex-1 text-gray-700">
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-8 relative">
-                        Nossa História
-                        <span class="absolute left-0 -bottom-2 w-24 h-1 bg-cyan-600 rounded-full"></span>
+                    <h2 class="text-4xl md:text-3xl font-bold text-gray-800 mb-8 relative">
+                        Nós trabalhamos para impulsionar o seu negócio. Inovação, segurança e eficiência.
+                        <span class="absolute left-0 -bottom-2 w-24 h-1 bg-cyan-700 rounded-full"></span>
                     </h2>
                     <div class="space-y-6 text-lg leading-relaxed">
                         <p>
@@ -286,7 +301,7 @@
                         </p>
                         <p>
                             Nossos produtos e serviços englobam soluções que melhoram processos de decisão, estratégias
-                            e alternativas de investimento — sempre adaptadas à realidade da sua empresa, seja ela
+                            e alternativas de investimento, sempre adaptadas à realidade da sua empresa, seja ela
                             pequena, média ou grande.
                         </p>
                     </div>
@@ -316,30 +331,26 @@
         </div>
     </section>
 
-    <!-- sectio 24h... -->
     <section class="relative py-24 bg-gradient-to-b from-gray-50 to-gray-100" aria-labelledby="video-title">
         <div class="container mx-auto px-6">
 
-            <!-- Título com destaque sutil -->
             <h2 id="video-title"
                 class="text-3xl md:text-5xl font-extrabold text-gray-800 text-center mb-6 leading-tight">
                 24 horas no ar!<br>
-                <span class="text-cyan-600">Levando tranquilidade para sua empresa.</span>
+                <span class="text-cyan-700">Levando tranquilidade para sua empresa.</span>
             </h2>
 
-            <!-- Linha decorativa centralizada -->
             <div class="flex justify-center mb-10">
-                <div class="w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full"></div>
+                <div class="w-24 h-1  bg-cyan-700 rounded-full"></div>
             </div>
 
-            <!-- Texto alinhado e com espaçamento refinado -->
             <div class="max-w-4xl mx-auto text-center space-y-7 text-lg leading-relaxed text-gray-700">
 
                 <p>
                     Nosso suporte é um canal direto entre nossos especialistas e você.
                     <strong class="text-gray-800">Presencialmente ou online</strong>, conte sempre conosco
                     para solucionar os problemas do dia a dia. Um modelo de gerenciamento que garante
-                    <span class="text-cyan-600 font-medium">maior produtividade</span> e reduz de maneira
+                    <span class="text-cyan-700 font-medium">maior produtividade</span> e reduz de maneira
                     significativa falhas nos seus equipamentos.
                 </p>
 
@@ -353,9 +364,9 @@
                     <strong>monitoramento de dados</strong>, <strong>identificação de vulnerabilidades</strong> ou até
                     mesmo
                     a <strong>manutenção de seus equipamentos</strong>, a <span
-                        class="text-cyan-600 font-semibold">SUTICON</span>
+                        class="text-cyan-700 font-semibold">SUTICON</span>
                     oferece a solução ideal para atender às suas necessidades, com um
-                    <span class="underline decoration-cyan-500/50 decoration-2 underline-offset-4">excelente
+                    <span class="underline decoration-cyan-700/50 decoration-2 underline-offset-4">excelente
                         custo-benefício</span>.
                 </p>
             </div>
@@ -363,62 +374,7 @@
         </div>
     </section>
 
-    <!-- Nossos Diferenciais -->
-    <section class="relative py-24 bg-gradient-to-b from-gray-50 to-white" aria-labelledby="diferenciais-title">
-        <div class="container mx-auto px-6">
-            <h2 id="diferenciais-title" class="text-4xl md:text-5xl font-extrabold text-center text-gray-800 mb-4">
-                Nossos Diferenciais
-            </h2>
-            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-16">
-                Conheça os pilares que tornam a <span class="text-cyan-600 font-semibold">SUTICON</span> referência
-                em soluções de tecnologia.
-            </p>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
-                <!-- Card -->
-                <div
-                    class="group bg-white rounded-2xl p-8 text-center shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-500">
-                    <div
-                        class="w-20 h-20 rounded-full bg-cyan-500/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-cyan-500/20 transition-colors">
-                        <i class="fas fa-headset text-cyan-500 text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800">Profissional e confiável</h3>
-                    <p class="text-gray-600 leading-relaxed">Nosso diferencial está no atendimento ágil e personalizado durante o horário comercial. Priorizamos resolver as demandas dos nossos clientes com rapidez e eficiência, garantindo suporte completo e comunicação clara dentro do expediente.</p>
-                </div>
-
-                <!-- Card -->
-                <div
-                    class="group bg-white rounded-2xl p-8 text-center shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-500">
-                    <div
-                        class="w-20 h-20 rounded-full bg-cyan-500/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-cyan-500/20 transition-colors">
-                        <i class="fas fa-award text-cyan-500 text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800">Marcas Premium</h3>
-                    <p class="text-gray-600 leading-relaxed">Parceria oficial com as melhores marcas do mercado.</p>
-                </div>
-
-                <!-- Card -->
-                <div
-                    class="group bg-white rounded-2xl p-8 text-center shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-500">
-                    <div
-                        class="w-20 h-20 rounded-full bg-cyan-500/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-cyan-500/20 transition-colors">
-                        <i class="fas fa-users text-cyan-500 text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800">Consultoria Técnica</h3>
-                    <p class="text-gray-600 leading-relaxed">Especialistas para ajudar na escolha ideal para o seu
-                        perfil.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Efeito de gradiente decorativo -->
-        <div
-            class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-cyan-500/5 to-transparent pointer-events-none">
-        </div>
-    </section>
-
-
-    <!-- Serviços Oferecidos -->
     <section class="py-20" aria-labelledby="servicos-title">
         <div class="container px-4 mx-auto">
             <h2 id="servicos-title" class="text-4xl font-bold text-center mb-12 text-gray-800">Serviços Oferecidos
@@ -429,15 +385,15 @@
                         <h3 class="text-xl font-bold mb-4 text-gray-800">Venda de Equipamentos</h3>
                         <ul class="space-y-2 text-gray-600">
                             <li class="flex items-start gap-2">
-                                <i class="fas fa-check-circle w-5 h-5 text-cyan-500 mt-0.5"></i>
+                                <i class="fas fa-check-circle w-5 h-5 text-cyan-700 mt-0.5"></i>
                                 <span>Computadores e Notebooks</span>
                             </li>
                             <li class="flex items-start gap-2">
-                                <i class="fas fa-check-circle w-5 h-5 text-cyan-500 mt-0.5"></i>
+                                <i class="fas fa-check-circle w-5 h-5 text-cyan-700 mt-0.5"></i>
                                 <span>Periféricos e Acessórios</span>
                             </li>
                             <li class="flex items-start gap-2">
-                                <i class="fas fa-check-circle w-5 h-5 text-cyan-500 mt-0.5"></i>
+                                <i class="fas fa-check-circle w-5 h-5 text-cyan-700 mt-0.5"></i>
                                 <span>Componentes e Upgrades</span>
                             </li>
                         </ul>
@@ -448,16 +404,16 @@
                         <h3 class="text-xl font-bold mb-4 text-gray-800">Consultoria Técnica</h3>
                         <ul class="space-y-2 text-gray-600">
                             <li class="flex items-start gap-2">
-                                <i class="fas fa-check-circle w-5 h-5 text-cyan-500 mt-0.5"></i>
+                                <i class="fas fa-check-circle w-5 h-5 text-cyan-700 mt-0.5"></i>
                                 <span>Análise de necessidades</span>
                             </li>
                             <li class="flex items-start gap-2">
-                                <i class="fas fa-check-circle w-5 h-5 text-cyan-500 mt-0.5"></i>
+                                <i class="fas fa-check-circle w-5 h-5 text-cyan-700 mt-0.5"></i>
                                 <span>Projetos corporativos</span>
                             </li>
                             <li class="flex items-start gap-2">
-                                <i class="fas fa-check-circle w-5 h-5 text-cyan-500 mt-0.5"></i>
-                                <span>Montagem de setups</span>
+                                <i class="fas fa-check-circle w-5 h-5 text-cyan-700 mt-0.5"></i>
+                                <span>Montagem e manutenção de computadores</span>
                             </li>
                         </ul>
                     </div>
@@ -466,7 +422,6 @@
         </div>
     </section>
 
-    <!-- Call to Action -->
     <section class="py-20 bg-cyan-700 text-white" aria-labelledby="cta-title">
         <div class="container px-4 mx-auto text-center">
             <h2 id="cta-title" class="text-4xl font-bold mb-6">Pronto para Conhecer Nossas Soluções?</h2>

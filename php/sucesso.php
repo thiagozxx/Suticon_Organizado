@@ -68,7 +68,7 @@ $voltar = htmlspecialchars(urldecode($voltar), ENT_QUOTES, 'UTF-8');
     <!-- Botão Voltar -->
     <a 
       href="<?= $voltar ?>" 
-      class="inline-flex items-center gap-2 bg-cyan-600 text-white font-semibold px-8 py-4 rounded-full hover:bg-cyan-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+      class="inline-flex items-center gap-2 bg-cyan-600 text-white font-semibold px-8 py-4 rounded-full hover:bg-cyan-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
       aria-label="Voltar para a página anterior"
     >
       <i class="fas fa-arrow-left"></i>
